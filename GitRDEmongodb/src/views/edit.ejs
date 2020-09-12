@@ -1,0 +1,43 @@
+<%- include ('partials/header') %>
+<!-- FORM -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 offset-md-3"  > <h2>Editar Estudiante</h2>
+            <div class="card">
+                <div class="card-body">
+                    <form action="/edit/<%= dato._id%>" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="nombre" placeholder="Ingrese el nombre" class="form-control" 
+                            value="<%= dato.nombre%>">
+                        </div>
+        
+                        <div class="form-group">
+                            <input type="text" name="apellido" placeholder="Ingrese el apellido" class="form-control"
+                            value="<%= dato.apellido%>">
+                        </div>
+        
+                        <div class="form-group">
+                            <input type="text" name="cedula" placeholder="Ingrese numero de cédula" class="form-control"
+                            value="<%= dato.cedula%>">
+                        </div>
+        
+                        <div class="form-group">
+                            <input type="number" name="nota1" placeholder="Ingrese nota 1" class="form-control"
+                            value="<%= dato.nota1%>">
+                        </div>
+        
+                        <div class="form-group">
+                            <input type="number" name="nota2" placeholder="Ingrese nota 2" class="form-control"
+                            value="<%= dato.nota2%>">
+                        </div>
+        
+                        <button type="submit" class="btn btn-primary btn-block"> Actualizar
+                            
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include ('partials/footer') %> 

@@ -1,0 +1,83 @@
+
+    
+    <%- include ('partials/header') %>
+
+    <!-- Formulario -->
+    <div class="container margin-left: auto">
+        <div class="row">
+            <!-- FORM -->
+            <div class="col-md-4" ><h2>Datos Estudiante</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/add" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="nombre" placeholder="Ingrese el nombre" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="apellido" placeholder="Ingrese el apellido" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="cedula" placeholder="Ingrese número de cédula" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="number" name="nota1" placeholder="Ingrese nota 1" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="number" name="nota2" placeholder="Ingrese nota 2" class="form-control">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block"> Guardar
+                                
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- LIST -->
+            <div class="col-md-8">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>N.</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Cédula</th>
+                            <th>Nota1</th>
+                            <th>Nota2</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (var i = 0; i < datos.length; i++) { %>
+                            <tr>
+                                <td><%= i+1 %></td>
+                                <td><%= datos[i].nombre %></td>
+                                <td><%= datos[i].apellido %></td>
+                                <td><%= datos[i].cedula %></td>
+                                <td><%= datos[i].nota1 %></td>
+                                <td><%= datos[i].nota2 %></td>
+                                <td>
+                                    <a href="/edit/<%= datos[i].id%>" class="btn btn-info btn-xs">Editar</a>
+                                    <a href="/delete/<%= datos[i].id%>" class="btn btn-danger btn-xs">Eliminar</a>
+                                </td>
+                                
+                                
+                            </tr>
+                            
+                            
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+    </div>
+
+
+     <%- include ('partials/footer') %> 
+
+     
